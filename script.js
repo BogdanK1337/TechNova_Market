@@ -274,10 +274,119 @@ function showToast(message) {
   }, 2600);
 }
 
-document.querySelectorAll("[data-cart-add]").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const product = btn.getAttribute("data-cart-add") || "Produkt";
-    showToast(`${product} dodano do koszyka demonstracyjnego.`);
-    trackEvent("add_to_cart_demo", { product, page });
+const CART_KEY = "technova_demo_cart";
+
+function getDemoCart() {
+  try {
+    const raw = localStorage.getItem(CART_KEY);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return [];
+  }
+}
+
+function saveDemoCart(items) {
+  try {
+    localStorage.setItem(CART_KEY, JSON.stringify(items));
+  } catch {
+    // Ignore localStorage failures in private mode / strict browsers.
+  }
+}
+
+function ensureMiniCart() {
+  let cartEl = document.querySelector("[data-mini-cart]");
+  if (cartEl) return cartEl;
+
+  const shell = document.createElement("div");
+  shell.className = "mini-cart-shell";
+  shell.innerHTML = `
+    <button class="mini-cart-toggle" type="button" data-mini-cart-toggle aria-expanded="false" aria-controls="mini-cart-panel">
+      Koszyk
+      <span class="mini-cart-toggle-count" data-mini-cart-toggle-count>0</span>
+    </button>
+    <aside class="mini-cart" data-mini-cart id="mini-cart-panel">
+      <div class="mini-cart-head">
+        <h3>Koszyk demo</h3>
+        <span class="mini-cart-count" data-mini-cart-count>0</span>
+      </div>
+      <ul class="mini-cart-list" data-mini-cart-list>
+        <li>Koszyk jest pusty.</li>
+      </ul>
+      <button class="btn btn-ghost mini-cart-clear" type="button" data-mini-cart-clear>Wyczysc</button>
+    </aside>
+  `;
+
+  document.body.appendChild(shell);
+  cartEl = shell.querySelector("[data-mini-cart]");
+  const toggleBtn = shell.querySelector("[data-mini-cart-toggle]");
+  const clearBtn = cartEl.querySelector("[data-mini-cart-clear]");
+
+  if (toggleBtn && cartEl) {
+    toggleBtn.addEventListener("click", () => {
+      const isOpen = cartEl.classList.toggle("is-open");
+      toggleBtn.setAttribute("aria-expanded", String(isOpen));
+    });
+  }
+
+  if (clearBtn) {
+    clearBtn.addEventListener("click", () => {
+      saveDemoCart([]);
+      renderMiniCart();
+      showToast("Koszyk demo wyczyszczony.");
+      trackEvent("clear_cart_demo", { page });
+    });
+  }
+
+  return cartEl;
+}
+
+function renderMiniCart() {
+  const cartEl = ensureMiniCart();
+  const listEl = cartEl.querySelector("[data-mini-cart-list]");
+  const countEl = cartEl.querySelector("[data-mini-cart-count]");
+  const toggleCountEl = document.querySelector("[data-mini-cart-toggle-count]");
+  if (!listEl || !countEl) return;
+
+  const items = getDemoCart();
+  const totalCount = items.reduce((sum, item) => sum + (item.qty || 0), 0);
+  countEl.textContent = String(totalCount);
+  if (toggleCountEl) {
+    toggleCountEl.textContent = String(totalCount);
+  }
+
+  if (!items.length) {
+    listEl.innerHTML = "<li>Koszyk jest pusty.</li>";
+    return;
+  }
+
+  listEl.innerHTML = items
+    .map((item) => `<li>${item.name} <strong>x${item.qty}</strong></li>`)
+    .join("");
+}
+
+function addToDemoCart(productName) {
+  const items = getDemoCart();
+  const existing = items.find((item) => item.name === productName);
+  if (existing) {
+    existing.qty += 1;
+  } else {
+    items.push({ name: productName, qty: 1 });
+  }
+  saveDemoCart(items);
+  renderMiniCart();
+}
+
+const cartButtons = document.querySelectorAll("[data-cart-add]");
+if (cartButtons.length) {
+  renderMiniCart();
+  cartButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const product = btn.getAttribute("data-cart-add") || "Produkt";
+      addToDemoCart(product);
+      showToast(`${product} dodano do koszyka demo.`);
+      trackEvent("add_to_cart_demo", { product, page });
+    });
   });
-});
+}
