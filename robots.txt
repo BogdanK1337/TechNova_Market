@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bogdank1337.github.io/TechNova_Market/sitemap.xml
