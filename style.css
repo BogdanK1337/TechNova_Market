@@ -649,6 +649,107 @@ select:focus {
   opacity: 1;
 }
 
+.mini-cart-shell {
+  position: fixed;
+  left: 1rem;
+  bottom: 1rem;
+  z-index: 45;
+}
+
+.mini-cart-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid var(--line);
+  background: #ffffff;
+  color: var(--text);
+  border-radius: 8px;
+  padding: 0.56rem 0.75rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+
+.mini-cart-toggle-count {
+  border-radius: 999px;
+  background: #e2f0ef;
+  color: var(--primary-strong);
+  font-size: 0.78rem;
+  font-weight: 850;
+  line-height: 1;
+  padding: 0.22rem 0.42rem;
+}
+
+.mini-cart {
+  position: fixed;
+  left: 1rem;
+  bottom: 4.3rem;
+  z-index: 44;
+  width: min(320px, calc(100% - 2rem));
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  padding: 0.8rem;
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.mini-cart.is-open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.mini-cart-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.mini-cart-head h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.mini-cart-count {
+  border-radius: 999px;
+  background: #e2f0ef;
+  color: var(--primary-strong);
+  font-weight: 850;
+  font-size: 0.82rem;
+  line-height: 1;
+  padding: 0.25rem 0.48rem;
+}
+
+.mini-cart-list {
+  margin: 0;
+  padding-left: 1rem;
+  max-height: 180px;
+  overflow: auto;
+}
+
+.mini-cart-list li {
+  color: var(--muted);
+}
+
+.mini-cart-list li + li {
+  margin-top: 0.28rem;
+}
+
+.mini-cart-list strong {
+  color: var(--text);
+}
+
+.mini-cart-clear {
+  margin-top: 0.65rem;
+  width: 100%;
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(14px);
@@ -738,5 +839,17 @@ select:focus {
 
   .hero {
     padding-top: 2.5rem;
+  }
+
+  .mini-cart {
+    left: 0.65rem;
+    right: 0.65rem;
+    width: auto;
+    bottom: 4rem;
+  }
+
+  .mini-cart-shell {
+    left: 0.65rem;
+    bottom: 0.65rem;
   }
 }
