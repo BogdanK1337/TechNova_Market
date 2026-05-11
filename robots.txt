@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://BogdanK1337.github.io/projekt_uniwer/sitemap.xml
