@@ -2,67 +2,85 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://bogdank1337.github.io/TechNova_Market/index.html</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-05-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://bogdank1337.github.io/TechNova_Market/laptopy.html</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-05-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://bogdank1337.github.io/TechNova_Market/smartfony.html</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-05-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://bogdank1337.github.io/TechNova_Market/audio.html</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-05-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://bogdank1337.github.io/TechNova_Market/produkt-laptop-pro-14.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://bogdank1337.github.io/TechNova_Market/produkt-smartfon-zoom-x.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://bogdank1337.github.io/TechNova_Market/produkt-sluchawki-wave-anc.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://bogdank1337.github.io/TechNova_Market/blog.html</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-05-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://bogdank1337.github.io/TechNova_Market/jak-wybrac-laptopa-do-studiow-i-pracy-zdalnej.html</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://bogdank1337.github.io/TechNova_Market/smart-home-od-czego-zaczac-i-co-kupic.html</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://bogdank1337.github.io/TechNova_Market/jak-kupic-sluchawki-bluetooth-i-nie-przeplacic.html</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://bogdank1337.github.io/TechNova_Market/jak-zbudowac-stanowisko-do-nauki-i-pracy.html</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://bogdank1337.github.io/TechNova_Market/jak-wydluzyc-czas-pracy-baterii-w-smartfonie.html</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://bogdank1337.github.io/TechNova_Market/contact.html</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
