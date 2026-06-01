@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="pl">
 <head>
+  <link rel="stylesheet" href="exit-popup.css">
+  <script defer src="exit-popup.js"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Laptopy, smartfony, audio - TechNova Market sklep z elektronika</title>
@@ -24,6 +26,28 @@
   <script defer src="newsletter-config.js"></script>
   <script defer src="script.js"></script>
 </head>
+<div
+  class="exit-popup-overlay"
+  data-exit-popup
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="exit-popup-title"
+  aria-hidden="true"
+>
+  <div class="exit-popup" tabindex="-1">
+    <button class="exit-popup-close" type="button" data-exit-popup-close aria-label="Zamknij okno">&times;</button>
+    <p class="eyebrow">Zanim wyjdziesz</p>
+    <h2 id="exit-popup-title">Rabat 5% na pierwsze zamowienie</h2>
+    <p>
+      Zostaw na chwile — przygotowalismy kod <strong>START5</strong> na laptopy,
+      smartfony i audio. Wazny tylko dzisiaj w tej sesji przegladarki.
+    </p>
+    <div class="exit-popup-actions">
+      <a class="btn btn-primary" href="laptopy.html" data-exit-popup-cta>Zobacz produkty</a>
+      <button class="btn btn-ghost" type="button" data-exit-popup-dismiss>Nie, dziekuje</button>
+    </div>
+  </div>
+</div>
 <body data-page="home">
   <a class="skip-link" href="#main-content">Przejdz do tresci</a>
 
