@@ -1,0 +1,101 @@
+/* Exit-intent popup — dopasowany do TechNova Market */
+
+.exit-popup-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  background: rgba(17, 24, 39, 0.55);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.28s ease, visibility 0.28s ease;
+}
+
+.exit-popup-overlay.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.exit-popup {
+  position: relative;
+  width: min(440px, 100%);
+  padding: 1.75rem 1.5rem 1.5rem;
+  background: var(--surface, #fff);
+  border: 1px solid var(--line, #d5dee7);
+  border-radius: var(--radius, 8px);
+  box-shadow: var(--shadow, 0 14px 34px rgba(15, 23, 42, 0.11));
+  transform: translateY(12px) scale(0.98);
+  transition: transform 0.28s ease;
+}
+
+.exit-popup-overlay.is-visible .exit-popup {
+  transform: translateY(0) scale(1);
+}
+
+.exit-popup-close {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.65rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  border: none;
+  border-radius: var(--radius, 8px);
+  background: transparent;
+  color: var(--muted, #4b5563);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.exit-popup-close:hover,
+.exit-popup-close:focus-visible {
+  background: var(--bg-soft, #e8eef2);
+  color: var(--text, #111827);
+  outline: 2px solid var(--primary, #0f766e);
+  outline-offset: 2px;
+}
+
+.exit-popup .eyebrow {
+  margin: 0 0 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--primary, #0f766e);
+}
+
+.exit-popup h2 {
+  margin: 0 0 0.65rem;
+  font-size: 1.35rem;
+  line-height: 1.25;
+  color: var(--text, #111827);
+}
+
+.exit-popup p {
+  margin: 0 0 1.1rem;
+  color: var(--muted, #4b5563);
+  line-height: 1.55;
+}
+
+.exit-popup-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.exit-popup-actions .btn {
+  flex: 1 1 auto;
+  min-width: 8rem;
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .exit-popup-overlay,
+  .exit-popup {
+    transition: none;
+  }
+}
